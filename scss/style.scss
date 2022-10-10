@@ -1,0 +1,20 @@
+@import "base/variables";
+@import "base/condicion";
+@import "base/extend";
+@import "base/mixin";
+@import "base/maps";
+@import "base/operadores";
+@import "componentes/header";
+@import "componentes/footer";
+@import "componentes/section-index";
+@import "componentes/section-partidos";
+@import "componentes/section-titulos";
+@import "componentes/section-noticias";
+@import "componentes/section-jugadores";
+@import "componentes/section-sponsors";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+

@@ -1,0 +1,446 @@
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-areas: "h-div  h-nav";
+  background-color: #143068;
+  border-bottom: solid 5px #89CAF0;
+}
+header div {
+  grid-area: h-div;
+}
+header div img {
+  width: 80px;
+  height: 80px;
+}
+header nav {
+  grid-area: h-nav;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+header nav a {
+  text-decoration: none;
+  font-size: 150%;
+  color: #89CAF0;
+  font-family: "Staatliches";
+}
+header nav a:hover {
+  color: white;
+}
+
+/* Nav Mobile */
+#header__mobile {
+  grid-area: h-mobile;
+  display: none;
+}
+
+input#abrir-cerrar {
+  visibility: hidden;
+  position: absolute;
+}
+
+label[for=abrir-cerrar] {
+  cursor: pointer;
+  padding: 1rem;
+  color: #89CAF0;
+  display: inline-block;
+  position: absolute;
+}
+
+#h-icon {
+  font-size: 200%;
+}
+
+.cerrar {
+  display: none;
+}
+
+#barra {
+  width: 0;
+}
+
+input#abrir-cerrar:checked ~ #barra {
+  width: 300px;
+}
+
+input#abrir-cerrar:checked + label[for=abrir-cerrar], input#abrir-cerrar:checked ~ #contenido {
+  margin-left: 300px;
+  transition: margin-left 0.4s;
+}
+
+input#abrir-cerrar:checked + label[for=abrir-cerrar] .cerrar {
+  display: inline;
+}
+
+input#abrir-cerrar:checked + label[for=abrir-cerrar] .abrir {
+  display: none;
+}
+
+.barra {
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+  background-color: #143068;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.barra ul, .barra li {
+  list-style: none;
+}
+
+.barra ul {
+  display: block;
+  width: 100%;
+}
+
+.barra a {
+  display: block;
+  text-decoration: none;
+  font-size: 150%;
+  color: #89CAF0;
+  font-family: "Staatliches";
+  margin: 30px 30px 30px 30px;
+}
+.barra a:hover {
+  color: white;
+}
+
+/* Nav Mobile */
+@media screen and (max-width: 768px) {
+  #header__mobile {
+    display: block;
+  }
+  header {
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "h-mobile  h-div";
+  }
+  header nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  #logo__header {
+    display: none;
+  }
+}
+footer {
+  width: 100%;
+  height: 300px;
+  background-color: #143068;
+  border-top: solid 5px #89CAF0;
+}
+footer div {
+  padding: 10px 0px 0px 0px;
+}
+footer div img {
+  width: 120px;
+  height: 120px;
+}
+footer nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px 40px 40px 40px;
+}
+footer nav a img {
+  width: 60px;
+  height: 60px;
+}
+
+#section__index {
+  width: 100%;
+  height: 600px;
+  background-image: linear-gradient(rgba(5, 7, 12, 0.5), rgba(5, 7, 12, 0.5)), url(../images/background-index.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#section__index div div h1 {
+  margin: 50px 0px 0px 0px;
+  color: #89CAF0;
+  font-family: "Staatliches";
+}
+#section__index div div div {
+  margin: 50px 0px 0px 0px;
+  color: white;
+  font-family: "Quicksand";
+  font-size: 120%;
+}
+
+#section2__index {
+  width: 100%;
+  height: 700px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 47%, rgb(160, 255, 230) 50%, rgb(120, 252, 255) 59%, rgb(90, 255, 211) 69%, rgb(14, 222, 235) 79%, rgb(0, 202, 214) 92%);
+  border-top: solid 5px #89CAF0;
+}
+#section2__index div div div {
+  font-size: 120%;
+  font-family: "Quicksand";
+  font-weight: bold;
+  color: #143068;
+}
+
+#section3__index {
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(rgba(5, 7, 12, 0.5), rgba(5, 7, 12, 0.5)), url(../images/img-section3-index.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: solid 5px #89CAF0;
+}
+#section3__index div div h2 {
+  color: #89CAF0;
+  font-family: "Staatliches";
+}
+#section3__index div div div {
+  color: white;
+  font-family: "Quicksand";
+  font-size: 120%;
+  transition: all 0.5s ease;
+}
+#section3__index div div div:hover {
+  transform: scale(1.1);
+  font-size: 140%;
+  font-weight: bold;
+}
+
+#section4__index {
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(rgba(5, 7, 12, 0.5), rgba(5, 7, 12, 0.5)), url(../images/img-section4-index.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: solid 5px #89CAF0;
+}
+#section4__index div div h2 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: #89CAF0;
+  font-family: "Staatliches";
+}
+#section4__index div div div {
+  color: white;
+  font-family: "Quicksand";
+  font-size: 120%;
+  transition: all 0.5s ease;
+}
+#section4__index div div div:hover {
+  transform: scale(1.1);
+  font-size: 140%;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 992px) {
+  #section__index div div h1 {
+    margin: 20px 0px 0px 0px;
+  }
+  #section__index div div div {
+    margin: 20px 0px 0px 0px;
+    font-size: 100%;
+  }
+  #section2__index {
+    width: 100%;
+    height: 600px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 45%, rgb(160, 255, 230) 52%, rgb(120, 252, 255) 64%, rgb(90, 255, 211) 76%, rgb(14, 222, 235) 86%, rgb(0, 202, 214) 100%);
+  }
+  #section2__index div div img {
+    width: 400px;
+    height: 200px;
+  }
+  #section2__index div div div {
+    font-size: 100%;
+    margin: 60px 0px 0px 0px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #section__index div div h1 {
+    margin: 20px 0px 0px 0px;
+  }
+  #section__index div div div {
+    margin: 20px 0px 0px 0px;
+    font-size: 100%;
+  }
+  #section3__index div div div {
+    color: white;
+    font-family: "Quicksand";
+    font-size: 120%;
+    transition: all 0.5s ease;
+  }
+  #section3__index div div div:hover {
+    transform: scale(1);
+  }
+  #section4__index div div div {
+    color: white;
+    font-family: "Quicksand";
+    font-size: 120%;
+    transition: all 0.5s ease;
+  }
+  #section4__index div div div:hover {
+    transform: scale(1);
+  }
+}
+@media screen and (max-width: 576px) {
+  #section__index div div h1 {
+    margin: 20px 0px 0px 0px;
+  }
+  #section__index div div div {
+    margin: 20px 0px 0px 0px;
+    font-size: 12px;
+  }
+  #section3__index div div div {
+    font-size: 100%;
+  }
+  #section4__index div div div {
+    font-size: 100%;
+  }
+}
+#section__partidos {
+  width: 100%;
+  height: 700px;
+  background-color: #1a3e86;
+}
+#section__partidos div div div {
+  font-size: 120%;
+  font-family: "Quicksand";
+  font-weight: bold;
+  color: white;
+}
+
+@media screen and (max-width: 992px) {
+  #section__partidos {
+    width: 100%;
+    height: 600px;
+    background-color: #1c4493;
+  }
+  #section__partidos div div img {
+    width: 400px;
+    height: 200px;
+  }
+  #section__partidos div div div {
+    font-size: 100%;
+    margin: 60px 0px 0px 0px;
+  }
+}
+#section__titulos {
+  width: 100%;
+  height: 700px;
+  background-color: #1a3e86;
+}
+#section__titulos div div div {
+  font-size: 15px;
+  font-family: "Quicksand";
+  color: white;
+}
+
+@media screen and (max-width: 992px) {
+  #section__titulos {
+    width: 100%;
+    height: 600px;
+    background-color: #1c4493;
+  }
+  #section__titulos div div div {
+    font-size: 10px;
+    margin: 60px 0px 0px 0px;
+  }
+}
+#section__noticias {
+  width: 100%;
+  height: 700px;
+  background-color: #1a3e86;
+}
+#section__noticias div div div {
+  font-size: 120%;
+  font-family: "Quicksand";
+  font-weight: bold;
+  color: white;
+}
+
+@media screen and (max-width: 992px) {
+  #section__noticias {
+    width: 100%;
+    height: 600px;
+    background-color: #1c4493;
+  }
+  #section__noticias div div img {
+    width: 400px;
+    height: 200px;
+  }
+  #section__noticias div div div {
+    font-size: 100%;
+    margin: 60px 0px 0px 0px;
+  }
+}
+#section__jugadores {
+  width: 100%;
+  height: 700px;
+  background-color: #1a3e86;
+}
+#section__jugadores div div img {
+  width: 500px;
+  height: 300px;
+}
+#section__jugadores div div div {
+  font-size: 120%;
+  font-family: "Quicksand";
+  font-weight: bold;
+  color: white;
+}
+
+@media screen and (max-width: 992px) {
+  #section__jugadores {
+    width: 100%;
+    height: 600px;
+    background-color: #1c4493;
+  }
+  #section__jugadores div div img {
+    width: 400px;
+    height: 200px;
+  }
+  #section__jugadores div div div {
+    font-size: 100%;
+    margin: 60px 0px 0px 0px;
+  }
+}
+#section__sponsors {
+  width: 100%;
+  height: 700px;
+  background-color: white;
+}
+#section__sponsors div div div {
+  font-size: 120%;
+  font-family: "Quicksand";
+  font-weight: bold;
+  color: black;
+}
+
+@media screen and (max-width: 992px) {
+  #section__sponsors div div img {
+    width: 400px;
+    height: 200px;
+  }
+  #section__sponsors div div div {
+    font-size: 100%;
+    margin: 60px 0px 0px 0px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
